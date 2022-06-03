@@ -1,8 +1,8 @@
 const Song = require("../models/Song");
 const addSong = (req, res) => {
     try {
-    	const {name  , file ,artist_name , album } = req.body;
-    	let song = new Song({name , file, artist_name , album});
+    	const {name  , file ,artist_name , album , genre } = req.body;
+    	let song = new Song({name , file, artist_name , album , genre});
     	song = await  song.save();
     	return res.json(song);
     }

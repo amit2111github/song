@@ -20,6 +20,12 @@ const Song = new Schema({
 	album: { 
 		type: Schema.ObjectId,
 		ref: 'Album' 
+	},
+	genre : {
+		type : String,
+		trim : true,
+		required : true,
 	}
-});
+	
+},{timestamps : true});
 module.exports = mongoose.model('Song', Song);

@@ -1,5 +1,6 @@
-const getMostPopularSongs = (req, res) => {
-    //getMostPopularSongs api logic here
+const getMostPopularSongs = async (req, res) => {
+  	const data = await Song.find({}).sort({popularity : 'dsc'});
+  	return res.json(data);
 };
 
 
